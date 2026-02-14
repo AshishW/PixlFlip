@@ -1,0 +1,110 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    padding: 0 var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    cursor: pointer;
+}
+
+.brand-icon {
+    font-size: 1.5rem;
+    color: var(--coral);
+    filter: drop-shadow(0 0 8px rgba(255, 107, 74, 0.4));
+}
+
+.brand-text {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--coral), var(--amber));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.credits-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--amber);
+    transition: all var(--transition-base);
+}
+
+.credits-badge:hover {
+    border-color: var(--amber);
+    box-shadow: var(--shadow-glow-coral);
+}
+
+.credits-coin {
+    font-size: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.credits-count {
+    font-variant-numeric: tabular-nums;
+}
+
+.profile-wrapper {
+    position: relative;
+}
+
+.profile-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-full);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-default);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all var(--transition-base);
+}
+
+.profile-btn:hover {
+    border-color: var(--coral);
+    color: var(--coral);
+    box-shadow: var(--shadow-glow-coral);
+}
+
+.nav-login-btn {
+    padding: 8px 20px;
+    background: linear-gradient(135deg, var(--coral), var(--coral-dark));
+    color: white;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all var(--transition-base);
+    box-shadow: 0 2px 12px rgba(255, 107, 74, 0.3);
+}
+
+.nav-login-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(255, 107, 74, 0.4);
+}

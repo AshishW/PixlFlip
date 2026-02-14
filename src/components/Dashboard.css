@@ -1,0 +1,65 @@
+.dashboard {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: calc(64px + var(--space-2xl)) var(--space-lg) var(--space-3xl);
+}
+
+.dashboard-hero {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    animation: fadeInUp 600ms ease;
+}
+
+.dashboard-greeting {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+}
+
+.dashboard-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.dashboard-decks-section {
+    margin-top: var(--space-xl);
+    animation: fadeInUp 700ms ease 100ms both;
+}
+
+.decks-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.decks-section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.decks-count {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background: var(--bg-elevated);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-weight: 500;
+}
+
+@media (max-width: 640px) {
+    .dashboard {
+        padding: calc(64px + var(--space-lg)) var(--space-md) var(--space-2xl);
+    }
+
+    .dashboard-greeting {
+        font-size: 1.6rem;
+    }
+}
