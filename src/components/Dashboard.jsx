@@ -12,16 +12,17 @@ import toast from 'react-hot-toast';
 import './Dashboard.css';
 
 export default function Dashboard() {
-    const { user, isAuthenticated } = useAuthStore();
+    const user = useAuthStore((state) => state.user);
+    const token = useAuthStore((state) => state.token);
     const { decks, fetchDecks, deleteDeck, loading } = useFlashcardStore();
     const { editDeckId, openDeckEditor, closeDeckEditor } = useUiStore();
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (isAuthenticated()) {
+        if (token) {
             fetchDecks();
         }
-    }, [isAuthenticated, fetchDecks]);
+    }, [token, fetchDecks]);
 
     const getGreeting = () => {
         const hour = new Date().getHours();
@@ -50,7 +51,7 @@ export default function Dashboard() {
     return (
         <div className="dashboard">
             <div className="dashboard-hero">
-                {isAuthenticated() ? (
+                {token ? (
                     <h1 className="dashboard-greeting">
                         {getGreeting()},{' '}
                         <span className="gradient-text">{user?.name?.split(' ')[0] || 'Learner'}</span>
@@ -67,7 +68,7 @@ export default function Dashboard() {
 
             <TopicInput />
 
-            {isAuthenticated() && (
+            {token && (
                 <div className="dashboard-decks-section">
                     <div className="decks-header">
                         <h2 className="decks-section-title">My Decks</h2>

@@ -11,14 +11,14 @@ export default function TopicInput() {
     const [topic, setTopic] = useState('');
     const [cardCount, setCardCount] = useState(5);
     const { generateCards, saveDeck, generating } = useFlashcardStore();
-    const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+    const token = useAuthStore((s) => s.token);
     const openAuthModal = useUiStore((s) => s.openAuthModal);
 
     const handleGenerate = async (e) => {
         e.preventDefault();
         if (!topic.trim()) return;
 
-        if (!isAuthenticated()) {
+        if (!token) {
             openAuthModal('login');
             toast.error('Please sign in to generate flashcards');
             return;

@@ -7,7 +7,8 @@ import { FiUser } from 'react-icons/fi';
 import './Navbar.css';
 
 export default function Navbar() {
-    const { user, isAuthenticated } = useAuthStore();
+    const user = useAuthStore((state) => state.user);
+    const token = useAuthStore((state) => state.token);
     const openAuthModal = useUiStore((s) => s.openAuthModal);
     const [showProfile, setShowProfile] = useState(false);
     const profileRef = useRef(null);
@@ -30,7 +31,7 @@ export default function Navbar() {
             </div>
 
             <div className="navbar-actions">
-                {isAuthenticated() ? (
+                {token ? (
                     <>
                         <div className="credits-badge">
                             <span className="credits-coin">🪙</span>
