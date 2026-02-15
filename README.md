@@ -19,7 +19,7 @@ PixlFlip is a AI powered Flashcard app that helps you study for your exams, revi
 
 3. **Run the application:**
    ```bash
-   npm start
+   npm run dev
    ```
 
 4. **Build for production:**
